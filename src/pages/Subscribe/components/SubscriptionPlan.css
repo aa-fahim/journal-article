@@ -1,0 +1,29 @@
+.subscription-plan-container {
+  background-color: white;
+  border-radius: 4px;
+  width: 220px;
+  height: 250px;
+  padding: 25px 30px;
+}
+
+.header-text,
+.header-text-large {
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  margin: 2px 0px;
+}
+
+.header-text-large {
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+.faded-text {
+  display: flex;
+  align-items: flex-end;
+  margin: 2px 0px;
+  margin-bottom: 5px;
+  color: rgb(124, 124, 124);
+}
