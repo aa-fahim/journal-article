@@ -21,8 +21,6 @@
 }
 
 .faded-text {
-  display: flex;
-  align-items: flex-end;
   margin: 2px 0px;
   margin-bottom: 5px;
   color: rgb(124, 124, 124);
