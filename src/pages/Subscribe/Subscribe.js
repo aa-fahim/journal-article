@@ -1,6 +1,7 @@
 import React from 'react';
 import './Subscribe.css';
 import { Button } from 'semantic-ui-react';
+import SubscriptionPlan from './components/SubscriptionPlan';
 
 const subscribeButtonStyling = {
   color: 'white',
@@ -32,6 +33,8 @@ class Subscribe extends React.Component {
   }
 
   render() {
+    const { labels } = Subscribe.constants;
+
     return (
       <div className="subscribe-page-container">
         {/*<div
@@ -40,9 +43,39 @@ class Subscribe extends React.Component {
             >paywhirl('widget',{autoscroll: 1, initial_autoscroll: 0, domain:'fahim-s-company', uuid:'3a1ed435-0c8e-4018-989d-bf4c4acf6081'},'pw_6046d9184d27c');</script>"
         ></div>*/}
         <div ref={this.myRef} />
+        <div className="subscription-plans">
+          {labels.map((label) => (
+            <SubscriptionPlan
+              key={label.key}
+              duration={label.duration}
+              price={label.price}
+              perDuration={label.perDuration}
+              autoNewalMsg={label.autoNewalMsg}
+            />
+          ))}
+        </div>
       </div>
     );
   }
 }
+
+Subscribe.constants = {
+  labels: [
+    {
+      key: 1,
+      duration: '1 month',
+      price: '$1.00',
+      perDuration: 'per month',
+      autoNewalMsg: 'Auto-renews monthly',
+    },
+    {
+      key: 2,
+      duration: '1 year',
+      price: '$10.00',
+      perDuration: 'per year',
+      autoNewalMsg: 'Auto-renews annually',
+    },
+  ],
+};
 
 export default Subscribe;
