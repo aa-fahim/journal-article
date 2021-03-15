@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: #e1e1e1;
+    height: 50px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  color: black;
+}
+
+.navbar-logo:hover {
+  cursor: pointer;
+}
+
+.navbar-tabs {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-right: 40px;
+}
+
+.navbar-tab {
+    color:#616161;
+    margin: 10px 30px;
+    text-decoration: none;
+}
+
+.navbar-tab:hover {
+  color: white;
+}
+
+.button-text {
+  color: white;
+}

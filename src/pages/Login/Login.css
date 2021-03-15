@@ -1,0 +1,48 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 25%;
+  height: 40%;
+  min-width: 300px;
+  min-height: 400px;
+  padding: 10px 60px;
+  padding-top: 50px;
+  border-radius: 4px;
+}
+
+.login-header {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: bolder;
+}
+
+.login-input {
+  margin-bottom: 15px;
+}
+
+.ui.button.login-button {
+  margin: 4px 0;
+  margin-top: 30px;
+}
+
+.sign-up-text {
+  padding-top: 10px;
+}
+
+.underline-text {
+  color: #837f80;
+  text-decoration: underline;
+}
+
+.login-error {
+  color: red
+}
