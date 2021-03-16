@@ -45,13 +45,14 @@ class Subscribe extends React.Component {
         <div ref={this.myRef} />
         <div className="subscription-plans">
           {labels.map((label) => (
-            <SubscriptionPlan
-              key={label.key}
-              duration={label.duration}
-              price={label.price}
-              perDuration={label.perDuration}
-              autoNewalMsg={label.autoNewalMsg}
-            />
+            <div className="subscription-plan" key={label.key}>
+              <SubscriptionPlan
+                duration={label.duration}
+                price={label.price}
+                perDuration={label.perDuration}
+                autoNewalMsg={label.autoNewalMsg}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -63,14 +64,14 @@ Subscribe.constants = {
   labels: [
     {
       key: 1,
-      duration: '1 month',
+      duration: '1 Month',
       price: '$1.00',
       perDuration: 'per month',
       autoNewalMsg: 'Auto-renews monthly',
     },
     {
       key: 2,
-      duration: '1 year',
+      duration: '1 Year',
       price: '$10.00',
       perDuration: 'per year',
       autoNewalMsg: 'Auto-renews annually',

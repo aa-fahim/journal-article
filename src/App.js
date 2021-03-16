@@ -11,6 +11,7 @@ import Error from './pages/Error';
 import Subscribe from './pages/Subscribe/Subscribe';
 import SignUp from './pages/SignUp/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
+import PurchaseScreen from './pages/PurchaseScreen/PurchaseScreen';
 
 import { AuthProvider } from './contexts/AuthContext';
 import './App.css';
@@ -37,6 +38,9 @@ function App() {
               </Route>
               <Route path="/subscribe" exact>
                 <Subscribe />
+              </Route>
+              <Route path="/subscribe/purchase" exact>
+                <PurchaseScreen />
               </Route>
               <Route path="/sign-up" exact>
                 <SignUp />

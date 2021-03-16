@@ -1,7 +1,9 @@
-import React from 'react';
-import './SubscriptionPlan.css';
+import React, { useState } from 'react';
+import styles from './SubscriptionPlan.module.css';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
+// import Paypay from '../../../components/PayPal/Paypal';
 
 const subscribeButtonStyling = {
   color: 'white',
@@ -11,13 +13,24 @@ const subscribeButtonStyling = {
 };
 
 function SubscriptionPlan(props) {
+  const history = useHistory();
+
+  const handleCheckout = () => {
+    const { price, duration } = props;
+    history.push({
+      pathname: '/subscribe/purchase',
+      state: { price, duration },
+    });
+  };
+
   return (
-    <div className="subscription-plan-container">
-      <div className="header-text">{props.duration}</div>
-      <div className="header-text-large">{props.price}</div>
-      <div className="header-text"> {props.perDuration}</div>
-      <Button style={subscribeButtonStyling}>Choose Plan</Button>
-      <div className="faded-text">{props.autoNewalMsg}</div>
+    <div className={styles['subscription-plan-container']}>
+      <div className={styles['header-text']}>{props.duration}</div>
+      <div className={styles['header-text-large']}>{props.price}</div>
+      <div className={styles['header-text']}> {props.perDuration}</div>
+      <Button onClick={handleCheckout} style={subscribeButtonStyling}>
+        Choose Plan
+      </Button>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.purchase-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+.purchase-screen-wrapper {
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%;
+  margin-top: 80px;
+  border-radius: 4px;
+}
