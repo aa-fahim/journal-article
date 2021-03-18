@@ -30,9 +30,9 @@ function SubscriptionBox() {
 
   return (
     <div className="subscription-box-container">
-      <div className="header-text">For CAD</div>
+      <div className="header-text">For as low as</div>
       <div className="price-text-block">
-        <div className="header-text-large">$1.00</div>
+        <div className="header-text-large">$1.00 CAD</div>
         <div className="header-text">/month</div>
       </div>
       <div className="faded-text">*local taxes may apply</div>

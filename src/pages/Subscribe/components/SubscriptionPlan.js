@@ -3,7 +3,6 @@ import styles from './SubscriptionPlan.module.css';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-// import Paypay from '../../../components/PayPal/Paypal';
 
 const subscribeButtonStyling = {
   color: 'white',
@@ -17,9 +16,10 @@ function SubscriptionPlan(props) {
 
   const handleCheckout = () => {
     const { price, duration } = props;
+    console.log(price, duration);
     history.push({
       pathname: '/subscribe/purchase',
-      state: { price, duration },
+      state: { price: price, duration: duration },
     });
   };
 

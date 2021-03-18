@@ -17,7 +17,7 @@ function Login() {
   };
 
   const handleDashboardRedirect = () => {
-    history.push('/home');
+    history.push('/main');
   };
 
   const { handleSubmit, handleChange, values } = useFormik({

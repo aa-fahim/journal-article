@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import styles from './Paypal.module.css';
 
 function Paypal() {
   const paypal = useRef();
@@ -31,11 +32,7 @@ function Paypal() {
       .render(paypal.current);
   }, []);
 
-  return (
-    <div>
-      <div ref={paypal}></div>
-    </div>
-  );
+  return <div className={styles['paypal-container']} ref={paypal}></div>;
 }
 
 export default Paypal;

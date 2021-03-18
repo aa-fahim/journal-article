@@ -1,0 +1,7 @@
+.dashboardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgrey;
+  height: 100vh;
+}

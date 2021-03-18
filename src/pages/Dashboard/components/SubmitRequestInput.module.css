@@ -1,0 +1,10 @@
+.input-wrapper {
+  padding: 10px;
+  background-color: lightsteelblue;
+  border-radius: 4px;
+}
+
+.header-text {
+  font-size: 24px;
+  margin-bottom: 10px;
+}

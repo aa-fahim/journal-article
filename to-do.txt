@@ -1,0 +1,3 @@
+1. Implement a sidebar navigation inside dashboard page where user can logout, 
+see previous request (My Requests), and view account details (My Profile/Account),
+and a submit request (Submit A Request)

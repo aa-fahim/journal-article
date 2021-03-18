@@ -40,7 +40,6 @@ function SignUp() {
     validationSchema,
     validateOnChange: false,
     onSubmit(values) {
-      console.log(values);
       onSubmitHandler(values.email, values.password);
     },
   });

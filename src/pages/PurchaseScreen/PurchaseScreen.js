@@ -1,14 +1,25 @@
 import React from 'react';
 import styles from './PurchaseScreen.module.css';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import Paypal from '../../components/PayPal/Paypal';
 
 function PurchaseScreen(props) {
-  const { duration, price } = props.location.state;
-  const { defaultDuration, defaultPrice } = props;
+  const { defaultDuration, defaultPrice, location } = props;
+
+  let price = defaultPrice;
+  let duration = defaultDuration;
+  if (location.state) {
+    const { duration: chosenDuration, price: chosenPrice } = location.state;
+    duration = chosenDuration;
+    price = chosenPrice;
+  }
 
   return (
     <div className={styles['purchase-screen-container']}>
-      <div className={styles['purchase-screen-wrapper']}>{duration}</div>
+      <div className={styles['purchase-screen-wrapper']}>
+        <Paypal />
+      </div>
     </div>
   );
 }
@@ -26,4 +37,4 @@ PurchaseScreen.defaultProps = {
   defaultPrice: '1:00',
 };
 
-export default PurchaseScreen;
+export default withRouter(PurchaseScreen);

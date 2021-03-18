@@ -16,7 +16,7 @@ class Subscribe extends React.Component {
     this.myRef = React.createRef();
   }
   componentDidMount() {
-    const s = document.createElement('script');
+    /* const s = document.createElement('script');
     s.type = 'text/javascript';
     s.id = 'pw_6046ca8786282';
     s.src = 'https://app.paywhirl.com/pwa.js';
@@ -29,7 +29,7 @@ class Subscribe extends React.Component {
     if (!this.myRef.current) {
       this.myRef.current.appendChild(s);
       this.myRef.current.appendChild(paywhirl);
-    }
+    } */
   }
 
   render() {
@@ -41,19 +41,22 @@ class Subscribe extends React.Component {
           dangerouslySetInnerHTML="<script    type='text/javascript'  id='pw_6046d9184d27c'
               src='https://app.paywhirl.com/pwa.js'
             >paywhirl('widget',{autoscroll: 1, initial_autoscroll: 0, domain:'fahim-s-company', uuid:'3a1ed435-0c8e-4018-989d-bf4c4acf6081'},'pw_6046d9184d27c');</script>"
-        ></div>*/}
-        <div ref={this.myRef} />
-        <div className="subscription-plans">
-          {labels.map((label) => (
-            <div className="subscription-plan" key={label.key}>
-              <SubscriptionPlan
-                duration={label.duration}
-                price={label.price}
-                perDuration={label.perDuration}
-                autoNewalMsg={label.autoNewalMsg}
-              />
-            </div>
-          ))}
+        ></div>
+        <div ref={this.myRef} />*/}
+        <div className="subscribe-page-wrapper">
+          <div className="subscribe-header-text">Choose Your Plan</div>
+          <div className="subscription-plans">
+            {labels.map((label) => (
+              <div className="subscription-plan" key={label.key}>
+                <SubscriptionPlan
+                  duration={label.duration}
+                  price={label.price}
+                  perDuration={label.perDuration}
+                  autoNewalMsg={label.autoNewalMsg}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
