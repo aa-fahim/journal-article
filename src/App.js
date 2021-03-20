@@ -35,43 +35,45 @@ const DefaultContainer = () => (
   <>
     <Navbar />
     <div className="app-container">
-      <Route path="/home" exact>
-        <Main />
-      </Route>
-      <Route path="/about" exact>
-        there
-      </Route>
-      <Route path="/help" exact>
-        friend
-      </Route>
-      <Route path="/login" exact>
-        <Login />
-      </Route>
-      <Route path="/subscribe" exact>
-        <Subscribe />
-      </Route>
-      <Route path="/subscribe/purchase" exact>
-        <PurchaseScreen />
-      </Route>
-      <Route path="/sign-up" exact>
-        <SignUp />
-      </Route>
-      <Route exact path="/">
-        <Redirect to="/home" />
-      </Route>
-      <Route>
-        <Error />
-      </Route>
+      <Switch>
+        <Route exact path="/home">
+          <Main />
+        </Route>
+        <Route path="/about" exact>
+          there
+        </Route>
+        <Route path="/help" exact>
+          friend
+        </Route>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
+        <Route path="/subscribe" exact>
+          <Subscribe />
+        </Route>
+        <Route path="/subscribe/purchase" exact>
+          <PurchaseScreen />
+        </Route>
+        <Route path="/sign-up" exact>
+          <SignUp />
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
     </div>
   </>
 );
 
 const DashboardContainer = () => (
-  <>
+  <Switch>
     <Route exact path="/main">
       <Dashboard />
     </Route>
-  </>
+  </Switch>
 );
 
 export default App;

@@ -12,8 +12,8 @@ function Login() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const onSignUpRedirect = () => {
-    history.push('/sign-up');
+  const onSubscribeRedirect = () => {
+    history.push('/subscribe');
   };
 
   const handleDashboardRedirect = () => {
@@ -79,10 +79,10 @@ function Login() {
         {error ? <div className="login-error">{error}</div> : null}
         <div className="sign-up-text">
           Not a member?&nbsp;
-          <span className="underline-text" onClick={onSignUpRedirect}>
-            Sign up
+          <span className="underline-text" onClick={onSubscribeRedirect}>
+            Subscribe
           </span>
-          &nbsp;now
+          &nbsp;today
         </div>
       </div>
     </div>

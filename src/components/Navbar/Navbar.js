@@ -17,13 +17,13 @@ export default function Navbar() {
   const handleSubscribeRedirect = () => {
     history.push('/subscribe');
   };
-  const handleMainPageRedirect = () => {
-    history.push('/main');
+  const handleHomePageRedirect = () => {
+    history.push('/home');
   };
 
   return (
     <div className="navbar">
-      <div className="navbar-logo" onClick={handleMainPageRedirect}>
+      <div className="navbar-logo" onClick={handleHomePageRedirect}>
         Logo Placeholder
       </div>
       <div className="navbar-tabs">
