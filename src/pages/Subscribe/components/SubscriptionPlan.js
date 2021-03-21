@@ -15,31 +15,33 @@ function SubscriptionPlan(props) {
   const history = useHistory();
 
   const handleCheckout = () => {
-    const { price, duration } = props;
-    console.log(price, duration);
+    const { priceValue, duration } = props;
+    console.log(priceValue, duration);
     history.push({
       pathname: '/subscribe/purchase',
-      state: { price: price, duration: duration },
+      state: { price: priceValue, duration: duration },
     });
   };
 
   return (
     <div className={styles['subscription-plan-container']}>
       <div className={styles['header-text']}>{props.duration}</div>
-      <div className={styles['header-text-large']}>{props.price}</div>
+      <div className={styles['header-text-large']}>{`${props.price}`}</div>
       <div className={styles['header-text']}> {props.perDuration}</div>
       <Button onClick={handleCheckout} style={subscribeButtonStyling}>
         Choose Plan
       </Button>
+      <div className={styles['faded-text']}>{props.autoNewalMsg}</div>
     </div>
   );
 }
 
 SubscriptionPlan.propTypes = {
   duration: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.float,
   perDuration: PropTypes.string,
   autoNewalMsg: PropTypes.string,
+  priceValue: PropTypes.number,
 };
 
 export default SubscriptionPlan;

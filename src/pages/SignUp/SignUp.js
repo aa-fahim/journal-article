@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SignUp.css';
 import { Input, Button } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../../contexts/AuthContext';
+import { withCookies, Cookies } from 'react-cookie';
+import { instanceOf } from 'prop-types';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -20,7 +22,8 @@ const validationSchema = Yup.object().shape({
     .oneOf([Yup.ref('password'), null], 'Passwords must match'),
 });
 
-function SignUp() {
+function SignUp(props) {
+  const { cookies } = props;
   const history = useHistory();
   const { signup, currentUser } = useAuth();
 
@@ -30,6 +33,17 @@ function SignUp() {
   const onLoginRedirect = () => {
     history.push('/login');
   };
+
+  const onSubscribeRedirect = () => {
+    history.push('/subscribe');
+  };
+
+  useEffect(async () => {
+    const didUserPurchase = await cookies.get('didUserPurchase');
+    if (didUserPurchase !== 'true') {
+      onSubscribeRedirect();
+    }
+  }, []);
 
   const { handleSubmit, handleChange, values, errors } = useFormik({
     initialValues: {
@@ -120,4 +134,8 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+SignUp.propTypes = {
+  cookies: instanceOf(Cookies).isRequired,
+};
+
+export default withCookies(SignUp);

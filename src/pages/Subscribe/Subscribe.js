@@ -53,6 +53,7 @@ class Subscribe extends React.Component {
                   price={label.price}
                   perDuration={label.perDuration}
                   autoNewalMsg={label.autoNewalMsg}
+                  priceValue={label.priceValue}
                 />
               </div>
             ))}
@@ -69,6 +70,7 @@ Subscribe.constants = {
       key: 1,
       duration: '1 Month',
       price: '$1.00',
+      priceValue: 1,
       perDuration: 'per month',
       autoNewalMsg: 'Auto-renews monthly',
     },
@@ -76,6 +78,7 @@ Subscribe.constants = {
       key: 2,
       duration: '1 Year',
       price: '$10.00',
+      priceValue: 10,
       perDuration: 'per year',
       autoNewalMsg: 'Auto-renews annually',
     },

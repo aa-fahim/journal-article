@@ -18,7 +18,7 @@ function PurchaseScreen(props) {
   return (
     <div className={styles['purchase-screen-container']}>
       <div className={styles['purchase-screen-wrapper']}>
-        <Paypal />
+        <Paypal price={price} duration={duration} />
       </div>
     </div>
   );

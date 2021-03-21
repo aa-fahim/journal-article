@@ -4,6 +4,8 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+
+// Components
 import Navbar from './components/Navbar/Navbar';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
@@ -14,19 +16,22 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import PurchaseScreen from './pages/PurchaseScreen/PurchaseScreen';
 
 import { AuthProvider } from './contexts/AuthContext';
+import { CookiesProvider } from 'react-cookie';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Router>
-        <AuthProvider>
-          <Switch>
-            <Route exact path="/(main)" component={DashboardContainer} />
-            <Route component={DefaultContainer} />
-          </Switch>
-        </AuthProvider>
-      </Router>
+      <CookiesProvider>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route exact path="/(main)" component={DashboardContainer} />
+              <Route component={DefaultContainer} />
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </CookiesProvider>
     </div>
   );
 }
