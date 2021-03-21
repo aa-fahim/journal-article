@@ -1,11 +1,11 @@
 import React from 'react';
-import './Main.css';
+import './Home.css';
 import SubscriptionBox from './components/SubscriptionBox/SubscriptionBox';
 
-function Main() {
+function Home() {
   return (
-    <div className="main-container">
-      <div className="main-wrapper">
+    <div className="home-container">
+      <div className="home-wrapper">
         <div className="text-content">
           <div className="header">
             Get Instant Access To Any Journal Article
@@ -22,4 +22,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;

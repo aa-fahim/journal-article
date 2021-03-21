@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Input, Button } from 'semantic-ui-react';
 import styles from './SubmitRequestInput.module.css';
 
+const buttonStyle = {
+  marginLeft: '5px',
+};
+
 function SubmitRequestInput() {
   const [requestValue, setRequestValue] = useState();
 
@@ -21,7 +25,9 @@ function SubmitRequestInput() {
           value={requestValue}
           onChange={handleInputChange}
         />
-        <Button color="blue">Enter</Button>
+        <Button color="blue" style={buttonStyle}>
+          Enter
+        </Button>
       </div>
     </div>
   );
