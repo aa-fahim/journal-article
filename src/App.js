@@ -5,13 +5,14 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Main from './pages/Main/Main';
+import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Error from './pages/Error';
 import Subscribe from './pages/Subscribe/Subscribe';
 import SignUp from './pages/SignUp/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PurchaseScreen from './pages/PurchaseScreen/PurchaseScreen';
+import MenuSidebar from './components/MenuSidebar/MenuSidebar';
 
 import { AuthProvider } from './contexts/AuthContext';
 import './App.css';
@@ -37,7 +38,7 @@ const DefaultContainer = () => (
     <div className="app-container">
       <Switch>
         <Route exact path="/home">
-          <Main />
+          <Home />
         </Route>
         <Route path="/about" exact>
           there
@@ -69,11 +70,14 @@ const DefaultContainer = () => (
 );
 
 const DashboardContainer = () => (
-  <Switch>
-    <Route exact path="/main">
-      <Dashboard />
-    </Route>
-  </Switch>
+  <>
+    <MenuSidebar />
+    <Switch>
+      <Route exact path="/main">
+        <Dashboard />
+      </Route>
+    </Switch>
+  </>
 );
 
 export default App;

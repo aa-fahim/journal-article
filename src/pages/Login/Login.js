@@ -82,7 +82,7 @@ function Login() {
           <span className="underline-text" onClick={onSubscribeRedirect}>
             Subscribe
           </span>
-          &nbsp;today
+          &nbsp;today!
         </div>
       </div>
     </div>

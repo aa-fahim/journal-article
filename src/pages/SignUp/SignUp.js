@@ -108,13 +108,13 @@ function SignUp() {
           Sign Up
         </Button>
         {error ? <div className="signup-error">{error}</div> : null}
-        <div className="sign-up-text">
+        {/*<div className="sign-up-text">
           Already have an account?&nbsp;
           <span className="underline-text" onClick={onLoginRedirect}>
             Log in here
           </span>
           &nbsp;now
-        </div>
+        </div>*/}
       </form>
     </div>
   );

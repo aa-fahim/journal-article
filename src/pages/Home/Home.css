@@ -1,11 +1,11 @@
-.main-container {
+.home-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main-wrapper {
+.home-wrapper {
   width: 1000px;
   display: flex;
   flex-direction: row;
@@ -30,5 +30,5 @@
 }
 
 .subscription-wrapper {
-  color:white;
+  color: white;
 }

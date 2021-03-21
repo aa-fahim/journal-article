@@ -31,6 +31,7 @@ function SubscriptionPlan(props) {
       <Button onClick={handleCheckout} style={subscribeButtonStyling}>
         Choose Plan
       </Button>
+      <div className={styles['faded-text']}>{props.autoNewalMsg}</div>
     </div>
   );
 }
