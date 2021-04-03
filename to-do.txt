@@ -2,4 +2,13 @@
 see previous request (My Requests), and view account details (My Profile/Account),
 and a submit request (Submit A Request)
 
-2. Implement userLoggedIn logic to /main page.
+2. Implement userLoggedIn logic to /main page. (DONE)
+
+3. Remember me logic on /login page.
+
+4. Implement forgot password. (DONE)
+
+5. Lets change the bottom text/error messages of sign up, login, and password reset pages
+to make the text centralized.
+
+6. Add notication when email has successfully been sent.

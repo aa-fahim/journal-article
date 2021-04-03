@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="button-text">Subscribe</div>
         </Button>
         <Button color="blue" onClick={handleSignInRedirect}>
-          <div className="button-text">Sign In</div>
+          <div className="button-text">Login</div>
         </Button>
       </div>
     </div>

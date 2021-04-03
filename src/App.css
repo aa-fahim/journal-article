@@ -27,3 +27,9 @@
   overflow-y: auto;
   padding: 10px;
 }
+
+.app-dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}

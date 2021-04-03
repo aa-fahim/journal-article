@@ -20,6 +20,10 @@ function Login() {
     history.push('/main');
   };
 
+  const handlePasswordReset = () => {
+    history.push('/password-reset');
+  };
+
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: '',
@@ -78,11 +82,16 @@ function Login() {
         </Button>
         {error ? <div className="login-error">{error}</div> : null}
         <div className="sign-up-text">
-          Not a member?&nbsp;
+          Not a member?{' '}
           <span className="underline-text" onClick={onSubscribeRedirect}>
             Subscribe
+          </span>{' '}
+          today!
+        </div>
+        <div className="sign-up-text">
+          <span className="underline-text" onClick={handlePasswordReset}>
+            Forgot Password?
           </span>
-          &nbsp;today!
         </div>
       </div>
     </div>

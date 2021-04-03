@@ -1,0 +1,14 @@
+.menu-sidebar-container {
+  height: 100%;
+}
+
+.menu-sidebar-children-container {
+  width: 100%;
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: inherit;
+}

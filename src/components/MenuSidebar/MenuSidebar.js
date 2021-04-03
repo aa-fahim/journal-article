@@ -1,35 +1,48 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import styles from './MenuSidebar.module.css';
+import { useAuth } from '../../contexts/AuthContext';
 
-function MenuSidebar() {
+function MenuSidebar(props) {
   const [visible, setVisible] = useState(true);
+  const history = useHistory();
+  const { logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      handleSignInRedirect();
+    } catch {
+      console.log('failed to logout');
+      // we can put a notifcation here
+    }
+  };
+
+  const handleSignInRedirect = () => {
+    history.push('/login');
+  };
+
   return (
-    <div>
-      <Sidebar.Pushable as={Segment}>
-        <Sidebar
-          as={Menu}
-          animation="overlay"
-          icon="labeled"
-          inverted
-          onHide={() => setVisible(false)}
-          vertical
-          visible={visible}
-          width="thin"
-        >
-          <Menu.Item as="a">
-            <Icon name="home" />
-            Home
+    <div className={styles['menu-sidebar-container']}>
+      <Sidebar
+        as={Menu}
+        animation="push"
+        icon="labeled"
+        inverted
+        vertical
+        visible
+        width="thin"
+        height="100%"
+      >
+        <div className={styles['menu-wrapper']}>
+          <Menu.Item as="a" onClick={handleLogout}>
+            <Icon name="log out" />
+            Logout
           </Menu.Item>
-          <Menu.Item as="a">
-            <Icon name="gamepad" />
-            Games
-          </Menu.Item>
-          <Menu.Item as="a">
-            <Icon name="camera" />
-            Channels
-          </Menu.Item>
-        </Sidebar>
-      </Sidebar.Pushable>
+        </div>
+      </Sidebar>
     </div>
   );
 }

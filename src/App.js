@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,7 @@ import Subscribe from './pages/Subscribe/Subscribe';
 import SignUp from './pages/SignUp/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PurchaseScreen from './pages/PurchaseScreen/PurchaseScreen';
+import PasswordReset from './pages/PasswordReset/PasswordReset';
 import MenuSidebar from './components/MenuSidebar/MenuSidebar';
 
 import { AuthProvider } from './contexts/AuthContext';
@@ -63,6 +65,9 @@ const DefaultContainer = () => (
         <Route path="/sign-up" exact>
           <SignUp />
         </Route>
+        <Route path="/password-reset" exact>
+          <PasswordReset />
+        </Route>
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
@@ -75,14 +80,14 @@ const DefaultContainer = () => (
 );
 
 const DashboardContainer = () => (
-  <>
-    <MenuSidebar />
+  <div className="app-dashboard-container">
     <Switch>
       <Route exact path="/main">
+        <MenuSidebar />
         <Dashboard />
       </Route>
     </Switch>
-  </>
+  </div>
 );
 
 export default App;
