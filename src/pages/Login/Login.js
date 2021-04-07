@@ -82,16 +82,16 @@ function Login() {
         </Button>
         {error ? <div className="login-error">{error}</div> : null}
         <div className="sign-up-text">
+          <span className="underline-text" onClick={handlePasswordReset}>
+            Forgot Password?
+          </span>
+        </div>
+        <div className="sign-up-text">
           Not a member?{' '}
           <span className="underline-text" onClick={onSubscribeRedirect}>
             Subscribe
           </span>{' '}
           today!
-        </div>
-        <div className="sign-up-text">
-          <span className="underline-text" onClick={handlePasswordReset}>
-            Forgot Password?
-          </span>
         </div>
       </div>
     </div>

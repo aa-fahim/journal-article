@@ -11,7 +11,7 @@
   background-color: white;
   width: 25%;
   height: 40%;
-  min-width: 300px;
+  min-width: 355px;
   min-height: 400px;
   padding: 10px 60px;
   padding-top: 50px;
@@ -37,6 +37,7 @@
 .sign-up-text {
   padding-top: 10px;
   white-space: pre-wrap;
+  text-align: center;
 }
 
 .underline-text {
@@ -45,5 +46,6 @@
 }
 
 .login-error {
-  color: red
+  color: red;
+  text-align: center;
 }

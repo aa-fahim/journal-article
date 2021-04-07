@@ -28,6 +28,10 @@
         {
           "endOfLine": "auto"
         }
+      ],
+      "no-trailing-spaces": "error",
+      "object-curly-spacing": [
+        "error", "always"
       ]
   }
 }

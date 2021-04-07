@@ -1,3 +1,5 @@
+To-do:
+
 1. Implement a sidebar navigation inside dashboard page where user can logout, 
 see previous request (My Requests), and view account details (My Profile/Account),
 and a submit request (Submit A Request)
@@ -9,6 +11,17 @@ and a submit request (Submit A Request)
 4. Implement forgot password. (DONE)
 
 5. Lets change the bottom text/error messages of sign up, login, and password reset pages
-to make the text centralized.
+to make the text centralized. (DONE)
 
-6. Add notication when email has successfully been sent.
+6. Add notication when email has successfully been sent or error occured. (DONE)
+
+7. Failed to logout message.
+
+8. Improve backend request API.
+
+9. Reset password directions message.
+
+Notes:
+
+Disabled Dashboard redirection and SignUp redirection
+(both can be found by searching "Disabled redirection")

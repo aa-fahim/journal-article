@@ -11,8 +11,8 @@
   background-color: white;
   width: 25%;
   height: 40%;
-  min-width: 300px;
-  min-height: 420px;
+  min-width: 350px;
+  min-height: 400px;
   padding: 10px 60px;
   padding-top: 50px;
   border-radius: 4px;
@@ -21,7 +21,7 @@
 .signup-header {
   text-align: center;
   font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: bolder;
 }
 
@@ -31,7 +31,11 @@
 
 .ui.button.signup-button {
   margin: 4px 0;
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+.ui.button.signup-button-no-top-margin {
+  margin: 4px 0;
 }
 
 .sign-up-text {

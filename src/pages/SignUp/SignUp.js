@@ -41,7 +41,8 @@ function SignUp(props) {
   useEffect(async () => {
     const didUserPurchase = await cookies.get('didUserPurchase');
     if (didUserPurchase !== 'true') {
-      onSubscribeRedirect();
+      // Disabled redirection
+      // onSubscribeRedirect();
     }
   }, []);
 
