@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Input, Button } from 'semantic-ui-react';
+import { Input, Button, Message } from 'semantic-ui-react';
 import { useAuth } from '../../contexts/AuthContext';
 import styles from './PasswordReset.module.css';
 
@@ -10,17 +10,18 @@ function PasswordReset() {
 
   const [error, setError] = useState(null);
   const [email, setEmail] = useState();
+  const [showMessage, setShowMessage] = useState(false);
 
   const onLoginRedirect = () => {
     history.push('/login');
   };
 
   const onSubmitHandler = async () => {
-    console.log(email);
+    setShowMessage(false);
     try {
       setError('');
       await resetPassword(email);
-      onLoginRedirect();
+      setShowMessage(true);
     } catch {
       setError('No account registered with this email');
     }
@@ -55,6 +56,23 @@ function PasswordReset() {
           <div className={styles['password-reset-error']}>{error}</div>
         ) : null}
       </div>
+      {showMessage && (
+        <Message
+          error
+          floating
+          header="Instructions to reset your password have been sent to your email"
+          content={
+            <div>
+              Click{' '}
+              <span className="underline-text" onClick={onLoginRedirect}>
+                here
+              </span>{' '}
+              to login with your new password
+            </div>
+          }
+          className={styles.messageDialog}
+        />
+      )}
     </div>
   );
 }

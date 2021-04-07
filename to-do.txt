@@ -19,7 +19,7 @@ to make the text centralized. (DONE)
 
 8. Improve backend request API.
 
-9. Reset password directions message.
+9. Reset password directions message. (DONE)
 
 Notes:
 
